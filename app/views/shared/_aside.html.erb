@@ -1,3 +1,15 @@
-<aside class='aside'> 
+<%= stylesheet_link_tag "_aside" %>
 
+<aside class='aside'> 
+   <div class='popular'>
+      <h2 class='popular__header'>Most Popular Posts</h2>
+      <div class='wrapper'>
+         <% @best.each_with_index do |article| %>
+            <div class="wrapper__article">
+               <div class='article__img'></div>
+               
+            </div>
+         <% end %>
+      </div>
+   </div>
 </aside>
