@@ -2,15 +2,16 @@
 
 .aside {
    width: 30%;
-   height: 300px;
+   height: 100%;
+   font-family: 'Quicksand';
 }
 
-.popular__header {
+.aside__header {
    margin: 40px 0;
    font-family: 'Quicksand';
 }
 
-.wrapper {
+.popular, .biggest {
    width: 100%;
    height: 100%;
 }
@@ -21,6 +22,8 @@
    margin: 0 0 20px 0;
    border: 1px solid #e9e9e9;
    border-radius: 5px;
+
+   display: flex;
 }
 
 .article__img {
@@ -29,4 +32,70 @@
    background-image: url("http://rstheme.com/products/wordpress/vloglab/wp-content/uploads/2020/01/fashion_6-2-200x160.jpg");
    background-size: cover;
    background-position: center;
+}
+
+.content--aside {
+   width: 75%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+}
+
+.article__info{
+   width: 70%;
+   height: 20px;
+   margin: 10px 0 10px 20px;
+   font-size: 14px;
+   color: #A2A2A2;
+   
+   display: flex;
+}
+
+.info__owner {
+   margin: 0 0 0 20px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.article__title {
+   width: 90%;
+   margin: 10px 0 0 20px; 
+   font-weight: 700;
+   font-size: 18px;
+   font-family: 'Quicksand';
+   color: #222;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.box {
+   border: 1px solid #e9e9e9;
+   padding: 30px;
+}
+
+.element {
+   width: 100%;
+   height: 40px;
+   margin: 0 0 20px 0;
+   background-color: #F7F7F7;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   p {
+      font-weight: 700;
+      font-family: 'Quicksand';
+   }
+
+   p:nth-child(1) {
+      margin: 0 0 0 20px;
+   }
+
+   p:nth-child(2) {
+      margin: 0 20px 0 0;
+   }
 }

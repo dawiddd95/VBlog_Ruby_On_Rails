@@ -8,9 +8,7 @@
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-	 <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-	 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
+	 <script src="https://kit.fontawesome.com/8253b0ed7b.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -37,10 +35,20 @@
 	</nav>
 	<div class="navbar-burger burger" data-target="navbar">
 		
-	
-
 	<div class='container'>
 		<%= yield %>
 	</div>
+
+	<footer>
+		<p>VLOG</p>
+		<div class="navbar__links--footer">
+			<%= link_to 'HOME', root_path, :class => 'navbar__links__link' %>
+			<%= link_to 'CATEGORIES', root_path, :class => 'navbar__links__link' %>
+			<%= link_to 'ABOUT US', root_path, :class => 'navbar__links__link' %>
+			<%= link_to 'CREATE ACCOUNT', root_path, :class => 'navbar__links__link' %>
+			<%= link_to 'LOGIN', root_path, :class => 'navbar__links__link' %>
+		</div>
+		<p class='copyright'>@Copyright Dawid Łychoński 2020</p>
+	</footer>
   </body>
 </html>

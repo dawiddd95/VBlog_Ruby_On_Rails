@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 * {
    margin: 0;
    padding: 0;
    font-family: sans-serif;
 }
+
+.fa { font-family: 'FontAwesome' !important; } 
 
 .navbar {
    width: 100%;
@@ -31,6 +35,14 @@
    justify-content: space-between;
 }
 
+.navbar__links--footer {
+   margin: 40px auto;
+
+   a {
+      margin: 0 20px;
+   }
+}
+
 .navbar__links__link {
    font-weight: 700;
    font-size: 15px;
@@ -42,4 +54,29 @@
 .container {
    width: 95%;
    margin: 0 auto;
+}
+
+footer {
+   width: 100%;
+   height: 400px;
+   margin: 40px 0 0 0;
+   background-color: #F7F9FB;
+   color: black;
+   font-weight: bold;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+
+   p:nth-child(1) {
+      margin: 100px 0 0 40px;
+      font-size: 50px;
+      font-family: sans-serif;
+   }
+
+   .copyright {
+      margin: 70px 0 0 40px;
+      font-size: 14px;
+      font-family: sans-serif;
+   }
 }
