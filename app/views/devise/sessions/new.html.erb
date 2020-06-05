@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag "auth_form" %>
+
+
+<div class='wrapper login'>
+	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		<div class="wrapper__form">
+			<h2 class='wrapper__header'>LOG IN</h2>
+			<%= f.error :base %>
+      <div class='field'>
+				<%= f.input :email,
+					required: true,
+					wrapper: false,
+					label: 'Email:',
+					input_html: { class: "input" },
+					label_html: { class: "label" }
+				%>
+			</div>
+			<div class='field'>
+				<%= f.input :password,
+					required: true,
+					wrapper: false,
+					label: 'Password:',
+					input_html: { class: "input" },
+					label_html: { class: "label" }
+				%>
+			</div>
+      <div class='remember-me'>
+        <%= f.input :remember_me, label: false, input_html: { class: "checkbox" }, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
+        <p>Remember me</p>
+      </div>
+      
+
+		<% resource.errors.full_messages.each do |msg| %>
+    <%= msg %>
+<% end %>
+
+			<div class="form-actions">
+				<%= f.button :submit, "LOG IN", class: "button" %>
+			</div>
+		</div>
+	<% end %>
+</div>

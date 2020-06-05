@@ -1,0 +1,64 @@
+<%= stylesheet_link_tag "auth_form" %>
+
+<div class='wrapper register'>
+	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		<div class="wrapper__form">
+			<h2 class='wrapper__header'>SIGN UP</h2>
+
+			<% if resource.errors.any? %>
+				<div id="error_explanation">
+					<div class='alert'>
+						<% resource.errors.full_messages.each do |msg, index| %>
+							<p class='error'><%= msg %></p>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+			
+			<div class='field'>
+				<%= f.input :username, :error => false,
+					required: true,
+					autofocus: true,
+					wrapper: false,
+					label: 'Username:',
+					input_html: { class: "input", id: 'username'},
+					label_html: { class: "label" }
+				%>
+			</div>
+			
+			<div class='field'>
+				<%= f.input :email, :error => false,
+					required: true,
+					wrapper: false,
+					label: 'Email:',
+					input_html: { class: "input", id: 'email'},
+					label_html: { class: "label" }
+				%>
+			</div>
+
+			<div class='field'>
+				<%= f.input :password, :error => false,
+					required: true,
+					wrapper: false,
+					label: 'Password:',
+					input_html: { class: "input"},
+					label_html: { class: "label" }
+				%>
+			</div>
+			
+			<div class='field'>
+				<%= f.input :password_confirmation, :error => false,
+					required: true,
+					wrapper: false,
+					label: 'Confirm password:',
+					input_html: { class: "input"},
+					label_html: { class: "label" }
+				%>
+			</div>
+
+			<div class="form-actions">
+				<%= f.button :submit, "SIGN UP", class: "button" %>
+			</div>
+		</div>
+	<% end %>
+</div>

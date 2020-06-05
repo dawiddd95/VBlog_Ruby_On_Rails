@@ -12,25 +12,18 @@
   </head>
 
   <body>
-
-	<% if flash[:notice] %>
-		<div class="notification is-success global-notification">
-			<p class="notice"><%= notice %></p>
-		</div>
-	<% end %>
-	<% if flash[:alert] %>
-		<div class="notification is-danger global-notification">
-			<p class="alert"><%= alert %></p>
-		</div>
-	<% end %>
 	<nav class='navbar'>
 		<h1 class='navbar__brand'>VLOG</h1>
 		<div class="navbar__links">
 			<%= link_to 'HOME', root_path, :class => 'navbar__links__link' %>
 			<%= link_to 'CATEGORIES', root_path, :class => 'navbar__links__link' %>
 			<%= link_to 'ABOUT US', root_path, :class => 'navbar__links__link' %>
-			<%= link_to 'CREATE ACCOUNT', root_path, :class => 'navbar__links__link' %>
-			<%= link_to 'LOGIN', root_path, :class => 'navbar__links__link' %>
+			<% if !user_signed_in? %>
+				<%= link_to 'CREATE ACCOUNT', new_user_registration_path, :class => 'navbar__links__link' %>
+				<%= link_to 'LOGIN', new_user_session_path, :class => 'navbar__links__link' %>
+			<% else %>
+				<%= link_to "LOG OUT", destroy_user_session_path, method: :delete, :class => 'navbar__links__link' %>
+			<% end %>
 		</div>
 	</nav>
 	<div class="navbar-burger burger" data-target="navbar">
@@ -45,8 +38,12 @@
 			<%= link_to 'HOME', root_path, :class => 'navbar__links__link' %>
 			<%= link_to 'CATEGORIES', root_path, :class => 'navbar__links__link' %>
 			<%= link_to 'ABOUT US', root_path, :class => 'navbar__links__link' %>
-			<%= link_to 'CREATE ACCOUNT', root_path, :class => 'navbar__links__link' %>
-			<%= link_to 'LOGIN', root_path, :class => 'navbar__links__link' %>
+			<% if !user_signed_in? %>
+				<%= link_to 'CREATE ACCOUNT', new_user_registration_path, :class => 'navbar__links__link' %>
+				<%= link_to 'LOGIN', new_user_session_path, :class => 'navbar__links__link' %>
+			<% else %>
+				<%= link_to "LOG OUT", destroy_user_session_path, method: :delete, :class => 'navbar__links__link' %>
+			<% end %>
 		</div>
 		<p class='copyright'>@Copyright Dawid Łychoński 2020</p>
 	</footer>
