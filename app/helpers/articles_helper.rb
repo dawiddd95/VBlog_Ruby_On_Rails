@@ -9,11 +9,7 @@ module ArticlesHelper
    end
 
    def cut_content(text)
-      return "#{text[0..220]} #{text.length > 220 ? "..." : ""}"
-   end
-
-   def cut_title(text)
-      return "#{text[0..60]} #{text.length > 60 ? "..." : ""}"
+      return "#{text[0..100]} #{text.length > 100 ? "..." : ""}"
    end
 
    def articles_amount(number)
