@@ -1,5 +1,54 @@
-<h1>New Category</h1>
+<%= stylesheet_link_tag "form" %>
 
-<%= render 'form', category: @category %>
+<div class='wrapper register'>
+	<%= simple_form_for(@category) do |f| %>
+		<div class="wrapper__form">
+         <%= f.error_notification %>
 
-<%= link_to 'Back', categories_path %>
+			<h2 class='wrapper__header'>NEW CATEGORY</h2>
+
+			<% if @category.errors.any? %>
+				<div id="error_explanation">
+					<div class='alert'>
+						<% @category.errors.full_messages.each do |msg, index| %>
+							<p class='error'><%= msg %></p>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+			
+			<div class='field'>
+				<%= f.input :name, :error => false,
+					required: true,
+					autofocus: true,
+					wrapper: false,
+					label: 'Name:',
+					input_html: { class: "input"},
+					label_html: { class: "label" }
+				%>
+			</div>
+			
+			<div class='field'>
+				<%= f.input :img, :error => false,
+					required: true,
+					wrapper: false,
+					label: 'Img Url:',
+               placeolder: 'For example: https://cdn.wallpapersafari.com/9/92/cCw4WK.jpg',
+					input_html: { class: "input textarea"},
+					label_html: { class: "label" }
+				%>
+			</div>
+
+			<div class="form-actions">
+				<%= f.button :submit, "CREATE", class: "button" %>
+            <%= link_to categories_path, class: 'back-btn' do %>
+               <i class="fas fa-undo-alt"></i>
+               <p>BACK</p>
+            <% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
+
+
+

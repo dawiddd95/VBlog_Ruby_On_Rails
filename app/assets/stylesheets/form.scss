@@ -62,7 +62,10 @@
    }
 
    .input {
-      height: 40px;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 40px;
+      max-height: 100px;
       padding: 0 15px;
       border: 0;
       outline: 0;
@@ -83,6 +86,14 @@
          box-shadow: 0 0 0 2px rgba(100,181,255, 0.5);
       }
    };
+
+   .textarea {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 40px;
+      max-height: 100px;
+      padding-top: 15px;
+   }
    
    
    .remember-me {
@@ -103,6 +114,12 @@
       }
    }
 
+   .form-actions {
+      width: 100%;
+      display: flex;
+      align-items: center;
+   }
+
    .button {
       width: 90%;
       height: 40px;
@@ -112,7 +129,6 @@
       font-family: sans-serif;
       color: white;
       border: 0;
-      border-color: #FE0000;
       border-radius: 4px;
       background-color: #1890FF;
       outline: 0;
@@ -127,5 +143,16 @@
          box-shadow: 0 0 0 2px rgba(100,181,255, 0.5);
          transition: .3s;
       }
+   }
+
+   .back-btn {
+      width: 65px;
+      margin: 17px 0 0 0;
+      font-size: 16px;
+      text-decoration: none;
+      color: #1890FF;
+
+      display: flex;
+      justify-content: space-between;
    }
 }
